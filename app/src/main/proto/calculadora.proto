@@ -1,0 +1,20 @@
+
+syntax = "proto3";
+
+option java_package = "com.proto.calculadora";
+
+message CalculadoraRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message CalculadoraResponse {
+    double resultado = 1;
+}
+
+service CalculadoraService {
+    rpc div(CalculadoraRequest) returns (CalculadoraResponse);
+    rpc mul(CalculadoraRequest) returns (CalculadoraResponse);
+    rpc sum(CalculadoraRequest) returns (CalculadoraResponse);
+    rpc res(CalculadoraRequest) returns (CalculadoraResponse);
+}
